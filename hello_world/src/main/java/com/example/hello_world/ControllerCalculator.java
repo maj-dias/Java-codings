@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller //In Spring’s approach to building web sites, HTTP requests are handled by a controller
 public class ControllerCalculator {
@@ -16,9 +17,9 @@ public class ControllerCalculator {
     }
 
     @PostMapping("/calculate") // "/calculate" is a endpoint
-    public String calculateSubmit(Parameters parameters, Model model){
+    public String calculateSubmit(@ModelAttribute Parameters parameters, Model model){
         model.addAttribute("parameters", parameters);
         model.addAttribute("calculated", true);
-        return "index";
+        return "result";
     }
 }
