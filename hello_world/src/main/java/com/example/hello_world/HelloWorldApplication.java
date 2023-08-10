@@ -42,4 +42,5 @@ public class HelloWorldApplication {
 	public Resource index(){
 		return resourceLoader.getResource("classpath:templates/index.html");
 	}
+
 }

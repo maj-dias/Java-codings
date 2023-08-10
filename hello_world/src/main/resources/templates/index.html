@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Retirement Calculator</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
-    <h1>Retirement Calculator</h1>
-    <form class="form-table" th:action="@{/Calculate}" method="post">
-        <label for="formInitialMoney">Initial Amount of Money</label><br>
-        <input id="formInitialMoney"><br>
+<h1>Retirement Calculator</h1>
+<form class="form-table" th:action="@{/calculate}" th:object="${parameters}" method="post">
+    <label for="formInitialMoney">Initial Amount of Money</label><br>
+    <input id="formInitialMoney" th:field="*{initialAmountMoney}"><br>
 
-        <label for="formMonthlyContribution">Monthly contribution</label><br>
-        <input id="formMonthlyContribution"><br>
+    <label for="formMonthlyContribution">Monthly contribution</label><br>
+    <input id="formMonthlyContribution" th:field="*{monthlyContribution}"><br>
 
-        <label for="formInterestRate">Interest rate</label><br>
-        <input id="formInterestRate"><br>
+    <label for="formInterestRate">Interest rate</label><br>
+    <input id="formInterestRate" th:field="*{interestRate}"><br>
 
-        <label for="formYearsInvesting">Years Investing</label><br>
-        <input id="formYearsInvesting"><br>
+    <label for="formYearsInvesting">Years Investing</label><br>
+    <input id="formYearsInvesting" th:field="*{yearsInvesting}"><br>
 
-        <input type="button" value="Calculate">
+    <input type="submit" value="Calculate"> <input type="reset" value="Reset" /></p>
 
 
-    </form>
+</form>
 
 </body>
 </html>

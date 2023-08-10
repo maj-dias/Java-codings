@@ -18,6 +18,7 @@ public class ControllerCalculator {
 
     @PostMapping("/calculate") // "/calculate" is a endpoint
     public String calculateSubmit(@ModelAttribute Parameters parameters, Model model){
+        //a variavel parameters com p minusculo será utilizada no html
         model.addAttribute("parameters", parameters);
         model.addAttribute("calculated", true);
         return "result";
