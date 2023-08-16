@@ -28,11 +28,12 @@ public class ControllerCalculator {
 
         double finalAmount = 0;
         for (int i = 0; i < parameters.getYearsInvesting()*12; i++){
-            finalAmount = finalAmount* parameters.getInterestRate()^(1.0/12) + parameters.getMonthlyContribution();
+            finalAmount = finalAmount* Math.pow(1 + parameters.getInterestRate(), 1.0/12) + parameters.getMonthlyContribution();
         }
 
+        String finalAmountstr = String.format("%.2f", finalAmount);
         model.addAttribute("parameters", parameters);
-        model.addAttribute("finalAmount", finalAmount);
+        model.addAttribute("finalAmount", finalAmountstr);
         model.addAttribute("calculated", true);
         return "result";
     }
