@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Retirement Calculator</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/output.css}">
 </head>
 <body>
-<h1>Retirement Calculator</h1>
-<form class="form-table" th:action="@{/calculate}" th:object="${parameters}" method="post">
-    <label for="formInitialMoney">Initial Amount of Money</label><br>
-    <input id="formInitialMoney" th:field="*{initialAmountMoney}"><br>
+<h1 class="font-bold underline">Retirement Calculator</h1>
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" th:action="@{/calculate}" th:object="${parameters}" method="post">
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="formInitialMoney">
+            Initial Amount of Money
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+               id="formInitialMoney" th:field="*{initialAmountMoney}" type="text" placeholder="Initial Amount">
+    </div>
 
-    <label for="formMonthlyContribution">Monthly contribution</label><br>
-    <input id="formMonthlyContribution" th:field="*{monthlyContribution}"><br>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="formMonthlyContribution">
+            Monthly contribution
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+               id="formMonthlyContribution" th:field="*{monthlyContribution}" type="text" placeholder="Monthly Contribution">
+    </div>
 
-    <label for="formInterestRate">Interest rate</label><br>
-    <input id="formInterestRate" th:field="*{interestRate}"><br>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="formInterestRate">
+            Interest rate
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+               id="formInterestRate" th:field="*{interestRate}" type="text" placeholder="Interest Rate">
+    </div>
 
-    <label for="formYearsInvesting">Years Investing</label><br>
-    <input id="formYearsInvesting" th:field="*{yearsInvesting}"><br>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="formYearsInvesting">
+            Years Investing
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+               id="formYearsInvesting" th:field="*{yearsInvesting}" type="text" placeholder="Years Investing">
+    </div>
 
-    <input type="submit" value="Calculate"> <input type="reset" value="Reset" /></p>
-
-
+    <div class="flex items-center justify-between">
+        <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+               type="submit" value="Calculate">
+        <input class="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+               type="reset" value="Reset">
+    </div>
 </form>
+
 
 </body>
 </html>
