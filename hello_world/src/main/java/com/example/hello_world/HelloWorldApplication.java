@@ -38,9 +38,5 @@ public class HelloWorldApplication {
 	//In the context of the Java Spring framework, an endpoint refers to a specific URL or URI
 	// (Uniform Resource Identifier) exposed by a web application. Endpoints are associated with specific operations
 	// or actions that can be performed on or with the web application.
-	@GetMapping("/")
-	public Resource index(){
-		return resourceLoader.getResource("classpath:templates/index.html");
-	}
 
 }

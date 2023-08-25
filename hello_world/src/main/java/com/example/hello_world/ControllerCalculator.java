@@ -19,6 +19,12 @@ public class ControllerCalculator {
         return "index"; //return the name of a view
     }
 
+
+    @GetMapping("/")
+    public String main_view(){
+        return "main";
+    }
+
     //The @ModelAttribute annotation tells Spring MVC to bind the values of the parameters object
     //to the parameters model attribute
     @PostMapping("/calculate") // "/calculate" is a endpoint
