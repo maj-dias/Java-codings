@@ -1,0 +1,31 @@
+install angular using npm:
+
+-> npm install -g @angular/cli
+
+Create a workspace and initial application
+
+-> ng new my-app
+
+Run the app
+
+-> cd /my_app/
+-> ng serve --open
+-> (ng serve -o)
+
+--open (-o) open the browser
+
+Install angular material
+
+-> ng add @angular/material
+
+Generate module
+
+-> ng generate module module_name
+(-> ng g m module_name)
+
+-> ng generate module module_name --routing
+--routing cria o roteamento
+
+Generate component
+
+-> ng g c module_name/component_name
