@@ -13,7 +13,7 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    AppMaterialModule
+    AppMaterialModule //esse módulo centraliza as importações em uma única pasta: shared
   ]
 })
 export class CoursesModule { }
