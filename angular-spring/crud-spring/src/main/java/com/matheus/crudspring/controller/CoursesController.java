@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.matheus.crudspring.model.Course;
 import com.matheus.crudspring.repository.CourseRepository;
 
+
 @RestController //essa classe contém um endpoint
 @RequestMapping("/api/courses")
 @Component
+
 public class CoursesController {
 
 

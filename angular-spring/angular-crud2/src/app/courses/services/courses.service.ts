@@ -10,14 +10,14 @@ import {tap, take, delay} from 'rxjs/operators'; //RxJS, which stands for Reacti
 
 export class CoursesService {
 
-  private readonly API = '/assets/courses.json';
+  private readonly API = '/api/courses';
 
   constructor(private httpClient: HttpClient) { }
 
   list()  { //list() is a method defined inside the CoursesService class
     return this.httpClient.get<Course[]>(this.API).pipe(
       take(1), //assim que o servidor me der uma resposta eu finalizo a subscrição de dados
-      delay(5000),
+      delay(500),
       tap(courses => console.log(courses))
     );
   }
