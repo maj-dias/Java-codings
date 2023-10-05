@@ -10,7 +10,7 @@ import {tap, take, delay} from 'rxjs/operators'; //RxJS, which stands for Reacti
 
 export class CoursesService {
 
-  private readonly API = '/api/courses';
+  private readonly API = 'api/courses';
 
   constructor(private httpClient: HttpClient) { }
 
