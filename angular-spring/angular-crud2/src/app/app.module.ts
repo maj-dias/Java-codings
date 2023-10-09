@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import { HttpClientModule } from '@angular/common/http';
+import { CourseFormComponent } from './course/course-form/course-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CourseFormComponent
   ],
   imports: [ // o que é importado aqui fica disponível de forma global no angular
     BrowserModule,

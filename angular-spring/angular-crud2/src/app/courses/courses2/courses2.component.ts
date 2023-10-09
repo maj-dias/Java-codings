@@ -4,6 +4,7 @@ import { CoursesService } from '../services/courses.service';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses2',
@@ -20,11 +21,16 @@ export class Courses2Component {
   //and you can subscribe to them to react to those emissions.
   //colocar $ no final é uma notação típica de observable
 
-  displayedColumns = ['name','category'];
+  displayedColumns = ['name','category','actions'];
 
   //coursesService: CoursesService;
 
-  constructor(private coursesService: CoursesService, public dialog:MatDialog){
+  constructor(
+    private coursesService: CoursesService,
+    public dialog:MatDialog,
+    private router:Router,
+    private route: ActivatedRoute
+    ){
     //this.courses = []; //essa é uma alternativa para inicializar a variavel
     //this.coursesService = new CoursesService();
     this.courses$ = this.coursesService.list().pipe(
@@ -42,6 +48,10 @@ export class Courses2Component {
       data: errorMsg
     });
   }
+
+  onAdd() {
+    this.router.navigate(['new'],{relativeTo: this.route})
+  };
 
   ngOnInit():void {
     
