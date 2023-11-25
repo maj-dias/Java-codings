@@ -7,12 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import { HttpClientModule } from '@angular/common/http';
-import { CourseFormComponent } from './course/course-form/course-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseFormComponent
   ],
   imports: [ // o que é importado aqui fica disponível de forma global no angular
     BrowserModule,
@@ -24,4 +22,4 @@ import { CourseFormComponent } from './course/course-form/course-form.component'
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
