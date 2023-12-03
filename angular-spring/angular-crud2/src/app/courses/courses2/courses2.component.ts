@@ -21,7 +21,6 @@ export class Courses2Component {
   //and you can subscribe to them to react to those emissions.
   //colocar $ no final é uma notação típica de observable
 
-  displayedColumns = ['name','category','actions'];
 
   //coursesService: CoursesService;
 
