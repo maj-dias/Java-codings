@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.matheus.crudspring.model.Course;
 import com.matheus.crudspring.repository.CourseRepository;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController //essa classe contém um endpoint
@@ -34,6 +37,14 @@ public class CoursesController {
     public List<Course> list(){
         return courseRepository.findAll();
     }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Course> findByID(@PathVariable Long id) {
+        return courseRepository.findById(id)
+        .map(record -> ResponseEntity.ok().body(record))
+        .orElse(ResponseEntity.notFound().build());
+    }
+    
     
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
