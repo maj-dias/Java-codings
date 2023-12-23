@@ -5,6 +5,7 @@ import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormRecord } from '@angular/forms';
 
 @Component({
   selector: 'app-courses2',
@@ -49,8 +50,15 @@ export class Courses2Component {
   }
 
   onAdd() {
-    this.router.navigate(['new'],{relativeTo: this.route})
-  };
+    this.router.navigate(['new'],{relativeTo: this.route});
+  }
+
+  onEdit(course:Course){
+    console.log('cursos');
+    console.log(course._id);
+    console.log(course);
+    this.router.navigate(['edit', course._id], {relativeTo: this.route});
+  }
 
   ngOnInit():void {
     

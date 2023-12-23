@@ -24,14 +24,17 @@
           <mat-icon>add</mat-icon>
         </button>
       </mat-header-cell>
+
       <mat-cell *matCellDef="let element" class="action-column">
-        <button mat-icon-button color="primary" aria-label="Edit a course">
+
+        <button mat-icon-button color="primary" aria-label="Edit a course" (click)="onEdit(element)">
           <mat-icon>edit</mat-icon>
         </button>
 
         <button mat-icon-button color="warn" aria-label="remove course">
           <mat-icon>delete</mat-icon>
         </button>
+
       </mat-cell>
     </ng-container>
 
